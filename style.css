@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+header{
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4c7ab;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #d4c7ab;
+}
+
+main{
+    height: calc(100vh - 80px - 40px);
+}
+
+.toggle--dark{
+    width: 135px;
+    height: 60px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 99px;
+    background-image: url(lightmode.png);
+    display: block;
+    transition:0.4s;
+
+
+}
+
+.bolinha{
+    /* A bolinha não aparece se não trocar o display para inline-block*/
+    display: inline-block;
+    border-radius: 50%;
+    height: 52px;
+    width: 49.5px;
+    background-color: rgb(175, 176, 87);
+    position: relative;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%) translateX(0%);
+    transition: all 0.6s;
+}
+
+#toggle--dark{
+    display: none;
+}
+
+.dark .bolinha{
+    transform: translateX(calc(135px - 50px - 10px)) translateY(-50%);
+    background-color: rgb(97, 89, 195);
+}
+
+.dark .toggle--dark{
+    background-image: url(darkmode.png);
+}
+
+.img--main{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dark header, .dark footer{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a;
+    color: white;
+}

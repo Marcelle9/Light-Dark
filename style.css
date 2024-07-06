@@ -1,47 +1,40 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
+    transition: background-color 0.4s ease;
 }
 
-body{
+body {
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0; /* Cor de fundo padrão */
 }
 
-header{
-    height: 80px;
+header, footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 80px;
     background-color: #d4c7ab;
-    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.4s ease;
 }
 
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
-    background-color: #d4c7ab;
+main {
+    height: calc(100vh - 160px); /* 80px (header) + 80px (footer) */
 }
 
-main{
-    height: calc(100vh - 80px - 40px);
-}
-
-.toggle--dark{
+.toggle--dark {
     width: 135px;
     height: 60px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid #000;
     border-radius: 99px;
     background-image: url(lightmode.png);
     display: block;
-    transition:0.4s;
-
-
+    transition: 0.4s;
+    cursor: pointer;
 }
 
-.bolinha{
-    /* A bolinha não aparece se não trocar o display para inline-block*/
+.bolinha {
     display: inline-block;
     border-radius: 50%;
     height: 52px;
@@ -52,31 +45,28 @@ main{
     top: 50%;
     transform: translateY(-50%) translateX(0%);
     transition: all 0.6s;
-    
 }
 
-#toggle--dark{
+#toggle--dark {
     display: none;
 }
 
-.dark .bolinha{
+.dark .bolinha {
     transform: translateX(calc(135px - 50px - 10px)) translateY(-50%);
     background-color: rgb(97, 89, 195);
-    
 }
 
-.dark .toggle--dark{
+.dark .toggle--dark {
     background-image: url(darkmode.png);
 }
 
-.img--main{
+.img--main {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: filter 0.4s ease;
 }
 
-.dark header, .dark footer{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #0f172a;
-    color: white;
+.dark .img--main {
+    filter: brightness(0.8); /* Escurece a imagem quando no modo dark */
 }
